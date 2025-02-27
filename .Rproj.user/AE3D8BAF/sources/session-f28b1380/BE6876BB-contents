@@ -26,6 +26,7 @@ library(maptools)
 library(ggplot2)
 library(dplyr)
 library(readxl)
+library(lubridate)
 
 #Crear carpeta para almacenar los resultados
 dir.create("output", showWarnings = FALSE)
@@ -51,6 +52,10 @@ ggsave("output/bee_histogram.png")
 
 write.csv(bee_summary, "output/bee_summary.csv", row.names = FALSE)
 write.csv(women_summary, "output/women_summary.csv", row.names = FALSE)
+
+fecha <- ymd("2024-02-27")
+print(fecha)
+
 
 # Congelar el entorno
 renv::snapshot()
